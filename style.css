@@ -1,0 +1,36 @@
+html:root{
+	--font-display: var(--font-primary);
+}
+
+body{
+	background-color: #23272a;
+	color: white;
+	font-size: 25px;
+
+	display: grid;
+	grid-template-rows: 100vh;
+	grid-template-columns: 100vw;
+}
+
+.button {
+	background-color: #7289da;
+	border: none;
+	border-radius: 3px;
+	color: white;
+	padding: 8px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 4px 2px;
+	user-select: none;
+}
+
+.container{
+	background-color: #2c2f33;
+	width: 300px;
+	padding: 50px;
+	text-align: center;
+
+	justify-self: center;
+	align-self: center;
+}

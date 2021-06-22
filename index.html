@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+	<meta name="description" content="uuidv4 generator tool">
+	<meta name="author" content="kairusds">
+	<title>uuidv4</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<noscript>javascript is not enabled</noscript>
+		<p id="val"></p>
+		<button class="button" onclick="regen()">Regenerate</button>
+	</div>
+
+	<script>
+		const regen = () => document.getElementById("val").innerHTML = uuidv4();
+		regen();
+	</script>
+</body>
+</html>
