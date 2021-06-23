@@ -7,18 +7,34 @@
 	<title>uuidv4</title>
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/@dmuy/toast@latest/dist/mdtoast.min.css">
 	<script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+	<script src="https://unpkg.com/@dmuy/toast@latest/dist/mdtoast.min.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container wrapper-buttons">
 		<noscript>javascript is not enabled</noscript>
-		<p id="val"></p>
-		<button class="button" onclick="regen()">Regenerate</button>
+		<p id="val" onclick="copy()"></p>
+		<button class="blue-button" onclick="regen()">Regenerate</button>
 	</div>
-
 	<script>
-		const regen = () => document.getElementById("val").innerHTML = uuidv4();
+		const val = document.getElementById("val");
+		const regen = () => val.innerHTML = uuidv4();
 		regen();
+		
+		const copy = () => {
+			mdtoast("Copied to clipboard.");
+		
+			const element = document.createElement("textarea");
+			element.value = val.innerHTML;
+			element.setAttribute("readonly", "");
+			element.style.position = "absolute";
+			element.style.left = "-9999px";
+			document.body.appendChild(element);
+			element.select();
+			document.execCommand("copy");
+			document.body.removeChild(element);
+		};
 	</script>
 </body>
 </html>
